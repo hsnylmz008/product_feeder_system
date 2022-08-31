@@ -2,13 +2,13 @@
 
 namespace Providers;
 
-require dirname(__DIR__).'/Interfaces/dataFeederInterface.php';
-require dirname(__DIR__).'/helpers/createFileHelper.php';
+require dirname(__DIR__).'/Interfaces/DataFeederInterface.php';
+require dirname(__DIR__).'/helpers/CreateFileHelper.php';
 
-use Interfaces\dataFeederInterface;
-use Helpers\createFileHelper;
+use Interfaces\DataFeederInterface;
+use Helpers\CreateFileHelper;
 
-class Cimri implements dataFeederInterface
+class Cimri implements DataFeederInterface
 {
     private $jsonData;
 
@@ -22,7 +22,7 @@ class Cimri implements dataFeederInterface
     {
         // Cimri wants only JSON file in our scenario...
 
-        createFileHelper::createJsonFile(
+        CreateFileHelper::createJsonFile(
             $this->jsonData,
             get_called_class()
         );
